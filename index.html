@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Viagens</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+    <header class="bg-white bg-opacity-95 backdrop-blur-lg shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-6 text-center">
+            <h1 onclick="mostrarEstados()" class="text-4xl font-light cursor-pointer hover:opacity-80 hover:underline transition duration-300 transform hover:scale-105">Explore o Sul do Brasil</h1>
+            <div class="mt-4 flex justify-center gap-2">
+                <input type="text" id="searchInput" placeholder="Digite o destino..." onkeypress="if(event.key === 'Enter') buscarDestino()" class="px-6 py-3 w-64 border-2 border-gray-300 rounded-full focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300 transition">
+                <button onclick="buscarDestino()" class="px-8 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-full font-semibold hover:-translate-y-0.5 hover:shadow-xl transition shadow-lg">Buscar</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-16">
+        <section id="destino" class="mb-16 text-center">
+            <h2 class="text-4xl font-light text-white mb-4 drop-shadow-lg">Bem-vindo ao Guia de Viagens no Sul do Brasil</h2>
+            <p class="text-xl text-white text-opacity-95 max-w-2xl mx-auto">Selecione um estado que deseja conhecer no SUL!</p>
+        </section>
+
+        <section class="cards flex gap-8 flex-wrap justify-center" id="cardsContainer">
+            <!-- Cards serão inseridos aqui dinamicamente -->
+        </section>
+    </main>
+
+    <footer class="bg-white bg-opacity-90 backdrop-blur-lg text-gray-800 text-center py-6 mt-20 shadow-2xl">
+        <p class="text-sm">© 2026 Guia de Viagens no Sul do Brasil</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

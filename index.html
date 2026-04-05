@@ -3,36 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia de Viagens</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
-    </style>
+    <meta name="description" content="Guia completo de viagens pelo Sul do Brasil. Descubra os melhores destinos, pontos turísticos, hotéis e restaurantes em Paraná, Santa Catarina e Rio Grande do Sul.">
+    <meta name="theme-color" content="#667eea">
+    <title>Guia de Viagens - Explore o Sul do Brasil</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="font-sans text-gray-800">
-    <header class="bg-white bg-opacity-95 backdrop-blur-lg shadow-lg sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-6 text-center">
-            <h1 onclick="mostrarEstados()" class="text-4xl font-light cursor-pointer hover:opacity-80 hover:underline transition duration-300 transform hover:scale-105">Explore o Sul do Brasil</h1>
-            <div class="mt-4 flex justify-center gap-2">
-                <input type="text" id="searchInput" placeholder="Digite o destino..." onkeypress="if(event.key === 'Enter') buscarDestino()" class="px-6 py-3 w-64 border-2 border-gray-300 rounded-full focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300 transition">
-                <button onclick="buscarDestino()" class="px-8 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-full font-semibold hover:-translate-y-0.5 hover:shadow-xl transition shadow-lg">Buscar</button>
-            </div>
+<body class="app-body">
+    <header class="site-header" role="banner">
+        <div class="header-inner">
+            <button 
+                id="homeBtn" 
+                class="site-title" 
+                aria-label="Voltar para página inicial"
+                title="Clique para voltar ao início"
+            >
+                🗺️ Explore o Sul do Brasil
+            </button>
+            <form class="search-wrapper" role="search" onsubmit="event.preventDefault(); buscarDestino()">
+                <label for="searchInput" class="search-label">Buscar destino:</label>
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Digite o nome de uma cidade..." 
+                    class="search-input"
+                    aria-label="Campo de busca de destinos"
+                >
+                <button type="submit" class="search-button" aria-label="Buscar destino">
+                    🔍 Buscar
+                </button>
+            </form>
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-4 py-16">
-        <section id="destino" class="mb-16 text-center">
-            <h2 class="text-4xl font-light text-white mb-4 drop-shadow-lg">Bem-vindo ao Guia de Viagens no Sul do Brasil</h2>
-            <p class="text-xl text-white text-opacity-95 max-w-2xl mx-auto">Selecione um estado que deseja conhecer no SUL!</p>
+    <main class="site-main" id="main-content">
+        <section id="destino" class="intro-section" role="region" aria-live="polite" aria-label="Conteúdo do destino">
+            <h1 class="intro-title">Bem-vindo ao Guia de Viagens</h1>
+            <p class="intro-text">Selecione um estado ou busque uma cidade para descobrir as maravilhas do Sul!</p>
         </section>
 
-        <section class="cards flex gap-8 flex-wrap justify-center" id="cardsContainer">
+        <section class="cards" id="cardsContainer" aria-label="Lista de destinos e cidades">
             <!-- Cards serão inseridos aqui dinamicamente -->
         </section>
     </main>
 
-    <footer class="bg-white bg-opacity-90 backdrop-blur-lg text-gray-800 text-center py-6 mt-20 shadow-2xl">
-        <p class="text-sm">© 2026 Guia de Viagens no Sul do Brasil</p>
+    <footer class="site-footer" role="contentinfo">
+        <p class="footer-text">© 2026 Guia de Viagens no Sul do Brasil</p>
+        <p class="footer-accessibility">
+            <a href="#" title="Retornar ao topo da página">↑ Voltar ao topo</a>
+        </p>
     </footer>
 
     <script src="app.js"></script>
